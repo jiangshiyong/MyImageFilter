@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoEditingViewController">
+            <connections>
+                <outlet property="filterScrollView" destination="n56-jx-k5d" id="IjR-v2-9RG"/>
+                <outlet property="myPhotoImageView" destination="Evx-dG-aWo" id="PO4-db-BaX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Evx-dG-aWo">
+                    <rect key="frame" x="0.0" y="20" width="600" height="380"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylc-dN-9Hk" userLabel="BottomBgView">
+                    <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-OM-YRD">
+                            <rect key="frame" x="270" y="160" width="60" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="CGz-d8-pdU"/>
+                                <constraint firstAttribute="height" constant="30" id="DIo-ou-asN"/>
+                            </constraints>
+                            <state key="normal" title="滤镜">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n56-jx-k5d">
+                            <rect key="frame" x="0.0" y="8" width="600" height="96"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="of6-Eu-j3y"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="qfi-OM-YRD" secondAttribute="bottom" constant="10" id="7ER-Km-gqe"/>
+                        <constraint firstAttribute="trailing" secondItem="n56-jx-k5d" secondAttribute="trailing" id="dwm-x5-ZV5"/>
+                        <constraint firstItem="n56-jx-k5d" firstAttribute="leading" secondItem="Ylc-dN-9Hk" secondAttribute="leading" id="j4A-aA-2gY"/>
+                        <constraint firstAttribute="centerX" secondItem="qfi-OM-YRD" secondAttribute="centerX" id="r16-Ar-Xp7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ylc-dN-9Hk" firstAttribute="top" secondItem="Evx-dG-aWo" secondAttribute="bottom" id="3O9-hg-b9U"/>
+                <constraint firstItem="Evx-dG-aWo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="6oE-cd-DQH"/>
+                <constraint firstAttribute="bottom" secondItem="Evx-dG-aWo" secondAttribute="bottom" constant="200" id="CWz-Ii-yfs"/>
+                <constraint firstItem="Ylc-dN-9Hk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XfM-h3-E6A"/>
+                <constraint firstAttribute="bottom" secondItem="Ylc-dN-9Hk" secondAttribute="bottom" id="apQ-Cz-axB"/>
+                <constraint firstAttribute="trailing" secondItem="Ylc-dN-9Hk" secondAttribute="trailing" id="cTD-iC-sJS"/>
+                <constraint firstItem="Evx-dG-aWo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="djx-Hp-5eK"/>
+                <constraint firstItem="n56-jx-k5d" firstAttribute="top" secondItem="Evx-dG-aWo" secondAttribute="bottom" constant="8" id="llT-7h-1Rr"/>
+                <constraint firstAttribute="trailing" secondItem="Evx-dG-aWo" secondAttribute="trailing" id="rOH-BV-N3Y"/>
+            </constraints>
+            <point key="canvasLocation" x="454" y="320"/>
+        </view>
+    </objects>
+</document>
