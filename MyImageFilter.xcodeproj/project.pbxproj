@@ -19,6 +19,9 @@
 		EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE94579D1B2581DD00C305EE /* PhotoEditingViewController.m */; };
 		EE9457A01B2581DD00C305EE /* PhotoEditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */; };
 		EE9457A61B258BB800C305EE /* CustomFilterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9457A51B258BB800C305EE /* CustomFilterButtonView.m */; };
+		EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF675171B31805C00161F87 /* UIImage+Filter.m */; };
+		EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6751A1B3180C600161F87 /* CIFilter+Image.m */; };
+		EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6751E1B32BCAE00161F87 /* UIImage+Mark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditingViewController.xib; sourceTree = "<group>"; };
 		EE9457A41B258BB800C305EE /* CustomFilterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFilterButtonView.h; sourceTree = "<group>"; };
 		EE9457A51B258BB800C305EE /* CustomFilterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFilterButtonView.m; sourceTree = "<group>"; };
+		EEF675161B31805C00161F87 /* UIImage+Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filter.h"; sourceTree = "<group>"; };
+		EEF675171B31805C00161F87 /* UIImage+Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filter.m"; sourceTree = "<group>"; };
+		EEF675191B3180C600161F87 /* CIFilter+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+Image.h"; sourceTree = "<group>"; };
+		EEF6751A1B3180C600161F87 /* CIFilter+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIFilter+Image.m"; sourceTree = "<group>"; };
+		EEF6751D1B32BCAE00161F87 /* UIImage+Mark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Mark.h"; sourceTree = "<group>"; };
+		EEF6751E1B32BCAE00161F87 /* UIImage+Mark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Mark.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,7 @@
 		EE94576C1B2572C100C305EE /* MyImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				EEF675151B31804200161F87 /* Category-Filter */,
 				EE9457711B2572C100C305EE /* AppDelegate.h */,
 				EE9457721B2572C100C305EE /* AppDelegate.m */,
 				EE9457931B25732100C305EE /* HomeViewController.h */,
@@ -140,6 +150,19 @@
 				EE9457881B2572C100C305EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EEF675151B31804200161F87 /* Category-Filter */ = {
+			isa = PBXGroup;
+			children = (
+				EEF675161B31805C00161F87 /* UIImage+Filter.h */,
+				EEF675171B31805C00161F87 /* UIImage+Filter.m */,
+				EEF6751D1B32BCAE00161F87 /* UIImage+Mark.h */,
+				EEF6751E1B32BCAE00161F87 /* UIImage+Mark.m */,
+				EEF675191B3180C600161F87 /* CIFilter+Image.h */,
+				EEF6751A1B3180C600161F87 /* CIFilter+Image.m */,
+			);
+			path = "Category-Filter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,11 +268,14 @@
 			files = (
 				EE9457731B2572C100C305EE /* AppDelegate.m in Sources */,
 				EE9457701B2572C100C305EE /* main.m in Sources */,
+				EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */,
+				EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */,
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
 				EE9457A61B258BB800C305EE /* CustomFilterButtonView.m in Sources */,
 				EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */,
 				EE9457981B25733100C305EE /* SearchViewController.m in Sources */,
 				EE9457951B25732100C305EE /* HomeViewController.m in Sources */,
+				EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +402,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyImageFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a726ba02-ec9f-4719-a159-67fa6e826e21";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,9 +417,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: jiang shiyong (32DK52XR3F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jiang shiyong (32DK52XR3F)";
 				INFOPLIST_FILE = MyImageFilter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a726ba02-ec9f-4719-a159-67fa6e826e21";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -448,6 +478,7 @@
 				EE94578F1B2572C100C305EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE9457901B2572C100C305EE /* Build configuration list for PBXNativeTarget "MyImageFilterTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +487,7 @@
 				EE9457921B2572C100C305EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

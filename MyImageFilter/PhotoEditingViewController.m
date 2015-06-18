@@ -7,6 +7,7 @@
 //
 
 #import "PhotoEditingViewController.h"
+#import "UIImage+Mark.h"
 #import "AppDelegate.h"
 
 @interface PhotoEditingViewController ()<CustomFilterButtonViewDelegate>
@@ -16,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *filterScrollView;
 
 @property (strong, nonatomic) NSArray *filters;
-
+//@property (strong, nonatomic) NSMutableArray *filters;
 @property (strong, nonatomic) NSArray *filteredImages;
 @property (strong, nonatomic) CIImage *inputImage;
 @end
@@ -26,14 +27,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    /*
+     NSString *kCICategoryDistortionEffect;
+     NSString *kCICategoryGeometryAdjustment;
+     NSString *kCICategoryCompositeOperation;
+     NSString *kCICategoryHalftoneEffect;
+     NSString *kCICategoryColorAdjustment;
+     NSString *kCICategoryColorEffect;
+     NSString *kCICategoryTransition;
+     NSString *kCICategoryTileEffect;
+     NSString *kCICategoryGenerator;
+     NSString *kCICategoryReduction;
+     NSString *kCICategoryGradient;
+     NSString *kCICategoryStylize;
+     NSString *kCICategorySharpen;
+     NSString *kCICategoryBlur;
+     NSString *kCICategoryVideo;
+     NSString *kCICategoryStillImage;
+     NSString *kCICategoryInterlaced;
+     NSString *kCICategoryNonSquarePixels;
+     NSString *kCICategoryHighDynamicRange ;
+     NSString *kCICategoryBuiltIn;
+     NSString *kCICategoryFilterGenerator;
+     */
     
-    _filters = @[@"CIPhotoEffectChrome", @"CIPhotoEffectFade", @"CIPhotoEffectInstant",
-                 @"CIPhotoEffectMono", @"CIPhotoEffectNoir", @"CIPhotoEffectProcess",
-                 @"CIPhotoEffectTonal", @"CIPhotoEffectTransfer"];
+    [self showAllFilters];
+    
+    _filters = [NSArray arrayWithArray:[CIFilter filterNamesInCategories:@[kCICategoryColorEffect]]];
+    /*
+     CIColorClamp,
+     CIColorCrossPolynomial,
+     CIColorCube,
+     CIColorCubeWithColorSpace,
+     CIColorInvert,
+     CIColorMap,
+     CIColorMonochrome,
+     CIColorPolynomial,
+     CIColorPosterize,
+     CIFalseColor,
+     CIMaskToAlpha,
+     CIMaximumComponent,
+     CIMinimumComponent,
+     CIPhotoEffectChrome,
+     CIPhotoEffectFade,
+     CIPhotoEffectInstant,
+     CIPhotoEffectMono,
+     CIPhotoEffectNoir,
+     CIPhotoEffectProcess,
+     CIPhotoEffectTonal,
+     CIPhotoEffectTransfer,
+     CISepiaTone,
+     CIVignette,
+     CIVignetteEffect
+     */
+    
+    NSLog(@"_filters=========%@",_filters);
+//    _filters = @[@"CIPhotoEffectChrome", @"CIPhotoEffectFade", @"CIPhotoEffectInstant",
+//                 @"CIPhotoEffectMono", @"CIPhotoEffectNoir", @"CIPhotoEffectProcess",
+//                 @"CIPhotoEffectTonal", @"CIPhotoEffectTransfer",@"CIPhotoEffectFade"];
     _inputImage = [CIImage imageWithCGImage:[self.photoImage CGImage]];
     _filteredImages = [self preFilterImages];
     [self initContentView];
 }
+
+- (void)showAllFilters{
+    
+    NSArray *filterNames=[CIFilter filterNamesInCategory:kCICategoryBuiltIn];
+    NSLog(@"filterNames count=======%lu",(unsigned long)[filterNames count]);
+    for (NSString *filterName in filterNames) {
+        CIFilter *filter=[CIFilter filterWithName:filterName];
+        NSLog(@"\rfilter:%@\rattributes:%@",filterName,[filter attributes]);
+    }
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -82,17 +148,18 @@
         // Filter the image
         CIFilter *filter = [CIFilter filterWithName:filterName];
         [filter setValue:_inputImage forKey:kCIInputImageKey];
+        
         // Create a CG-back UIImage
         CGImageRef cgImage = [[CIContext contextWithOptions:nil] createCGImage:filter.outputImage fromRect:filter.outputImage.extent];
         UIImage *image = [UIImage imageWithCGImage:cgImage];
         CGImageRelease(cgImage);
-        
-        [images addObject:image];
+        if (image) {
+            [images addObject:image];
+        }
     }
     
     return [images copy];
 }
-
 
 - (void)layoutScorllViewSubViews {
 
@@ -120,8 +187,8 @@
 
 - (void)customFilterButtonView:(CustomFilterButtonView *)customFilterButtonView didSelectFilterImage:(UIImage *)filterImage {
 
-    self.myPhotoImageView.image = filterImage;
-
+    self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:[UIImage imageNamed:@"loading1_ios"] withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
+    //self.myPhotoImageView.image = [filterImage addUseImage:filterImage addMarkText:@"易迅易选" withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2+20, 80, 80)];
 }
 
 - (void)didReceiveMemoryWarning {

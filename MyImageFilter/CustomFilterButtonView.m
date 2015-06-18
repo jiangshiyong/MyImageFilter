@@ -43,6 +43,7 @@
         self.titleLabel.font = [UIFont systemFontOfSize:10.0f];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.text = type;
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
         [self addSubview:self.titleLabel];
         
         self.choiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
