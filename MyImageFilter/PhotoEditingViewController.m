@@ -16,10 +16,16 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *filterScrollView;
 
+@property (nonatomic, strong) UIImageView *markImageView;
+
 @property (strong, nonatomic) NSArray *filters;
 //@property (strong, nonatomic) NSMutableArray *filters;
 @property (strong, nonatomic) NSArray *filteredImages;
 @property (strong, nonatomic) CIImage *inputImage;
+
+@property (nonatomic) CGFloat lastScale;
+@property (nonatomic) CGRect oldFrame;    //保存图片原来的大小
+@property (nonatomic) CGRect largeFrame;  //确定图片放大最大的程度
 @end
 
 @implementation PhotoEditingViewController
@@ -100,7 +106,6 @@
     }
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -132,6 +137,20 @@
     self.myPhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.myPhotoImageView.image = self.photoImage;
     
+    //self.markImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];
+    
+    self.markImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, self.myPhotoImageView.frame.origin.y+(self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];
+    self.markImageView.image = [UIImage imageNamed:@"loading1_ios"];
+    [self.view addSubview:self.markImageView];
+    
+    [self.markImageView setMultipleTouchEnabled:YES];
+    [self.markImageView setUserInteractionEnabled:YES];
+    
+    self.oldFrame = self.markImageView.frame;
+    //self.largeFrame = CGRectMake(0 - self.myPhotoImageView.frame.size.width, 0 - self.myPhotoImageView.frame.size.height, 3 * self.oldFrame.size.width, 3 * self.oldFrame.size.height);
+    self.largeFrame = CGRectMake(0, 0 - self.myPhotoImageView.frame.size.height, 3 * self.oldFrame.size.width, 3 * self.oldFrame.size.height);
+    [self addGestureRecognizerToView:self.markImageView];
+    
     __weak PhotoEditingViewController *weakSelf = self;
     //延后执行某个方法
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -157,19 +176,16 @@
             [images addObject:image];
         }
     }
-    
     return [images copy];
 }
 
 - (void)layoutScorllViewSubViews {
 
-    
     for (CustomFilterButtonView *customView in self.filterScrollView.subviews) {
         
         [customView removeFromSuperview];
     }
     if ([_filteredImages count]>1) {
-        
         
         self.filterScrollView.contentSize = CGSizeMake(100*([_filteredImages count]+1), self.filterScrollView.frame.size.height);
         
@@ -187,8 +203,73 @@
 
 - (void)customFilterButtonView:(CustomFilterButtonView *)customFilterButtonView didSelectFilterImage:(UIImage *)filterImage {
 
-    self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:[UIImage imageNamed:@"loading1_ios"] withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
+    //添加图片水印 [UIImage imageNamed:@"loading1_ios"]
+    self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
     //self.myPhotoImageView.image = [filterImage addUseImage:filterImage addMarkText:@"易迅易选" withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2+20, 80, 80)];
+}
+
+// 添加所有的手势
+- (void)addGestureRecognizerToView:(UIView *)view
+{
+    // 旋转手势
+    UIRotationGestureRecognizer *rotationGestureRecognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotateView:)];
+    [view addGestureRecognizer:rotationGestureRecognizer];
+    
+    // 缩放手势
+    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
+    [view addGestureRecognizer:pinchGestureRecognizer];
+    
+    // 移动手势
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
+    [view addGestureRecognizer:panGestureRecognizer];
+}
+
+// 处理旋转手势
+- (void)rotateView:(UIRotationGestureRecognizer *)rotationGestureRecognizer
+{
+    UIView *view = rotationGestureRecognizer.view;
+    if (rotationGestureRecognizer.state == UIGestureRecognizerStateBegan || rotationGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        view.transform = CGAffineTransformRotate(view.transform, rotationGestureRecognizer.rotation);
+        [rotationGestureRecognizer setRotation:0];
+    }
+}
+
+// 处理缩放手势
+//- (void) pinchView:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+//{
+//    UIView *view = pinchGestureRecognizer.view;
+//    if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan || pinchGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+//        view.transform = CGAffineTransformScale(view.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
+//        pinchGestureRecognizer.scale = 1;
+//    }
+//}
+
+// 处理拖拉手势
+- (void) panView:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    UIView *view = panGestureRecognizer.view;
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [panGestureRecognizer translationInView:view.superview];
+        [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
+        [panGestureRecognizer setTranslation:CGPointZero inView:view.superview];
+    }
+}
+
+// 处理缩放手势
+- (void) pinchView:(UIPinchGestureRecognizer *)pinchGestureRecognizer {
+    
+    UIView *view = pinchGestureRecognizer.view;
+    if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan || pinchGestureRecognizer.state == UIGestureRecognizerStateChanged) {
+        view.transform = CGAffineTransformScale(view.transform, pinchGestureRecognizer.scale, pinchGestureRecognizer.scale);
+        if (self.markImageView.frame.size.width < self.oldFrame.size.width) {
+            self.markImageView.frame = self.oldFrame;
+            //让图片无法缩得比原图小
+        }
+        if (self.markImageView.frame.size.width > 3 * self.oldFrame.size.width) {
+            self.markImageView.frame = self.largeFrame;
+        }
+        pinchGestureRecognizer.scale = 1;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE55A76C1B392A8E00D473B0 /* filter_lut_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7681B392A8E00D473B0 /* filter_lut_1.png */; };
+		EE55A76D1B392A8E00D473B0 /* filter_lut_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7691B392A8E00D473B0 /* filter_lut_2.png */; };
+		EE55A76E1B392A8E00D473B0 /* filter_lut_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */; };
+		EE55A76F1B392A8E00D473B0 /* filter_lut_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A76B1B392A8E00D473B0 /* filter_lut_4.png */; };
+		EE55A7731B392BE300D473B0 /* FeSlideFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE55A7721B392BE300D473B0 /* FeSlideFilterView.m */; };
+		EE55A7761B392DCF00D473B0 /* CIFilter+LUT.m in Sources */ = {isa = PBXBuildFile; fileRef = EE55A7751B392DCF00D473B0 /* CIFilter+LUT.m */; };
+		EE55A77E1B39315300D473B0 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A77C1B39315300D473B0 /* done.png */; };
+		EE55A77F1B39315300D473B0 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A77D1B39315300D473B0 /* done@2x.png */; };
+		EE55A7811B39315F00D473B0 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7801B39315F00D473B0 /* sample.jpg */; };
 		EE9457701B2572C100C305EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE94576F1B2572C100C305EE /* main.m */; };
 		EE9457731B2572C100C305EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9457721B2572C100C305EE /* AppDelegate.m */; };
 		EE9457791B2572C100C305EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9457771B2572C100C305EE /* Main.storyboard */; };
@@ -35,6 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE55A7681B392A8E00D473B0 /* filter_lut_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_1.png; sourceTree = "<group>"; };
+		EE55A7691B392A8E00D473B0 /* filter_lut_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_2.png; sourceTree = "<group>"; };
+		EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_3.png; sourceTree = "<group>"; };
+		EE55A76B1B392A8E00D473B0 /* filter_lut_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_4.png; sourceTree = "<group>"; };
+		EE55A7711B392BE300D473B0 /* FeSlideFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeSlideFilterView.h; sourceTree = "<group>"; };
+		EE55A7721B392BE300D473B0 /* FeSlideFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeSlideFilterView.m; sourceTree = "<group>"; };
+		EE55A7741B392DCF00D473B0 /* CIFilter+LUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+LUT.h"; sourceTree = "<group>"; };
+		EE55A7751B392DCF00D473B0 /* CIFilter+LUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIFilter+LUT.m"; sourceTree = "<group>"; };
+		EE55A77C1B39315300D473B0 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		EE55A77D1B39315300D473B0 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
+		EE55A7801B39315F00D473B0 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
 		EE94576A1B2572C100C305EE /* MyImageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyImageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94576E1B2572C100C305EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE94576F1B2572C100C305EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +103,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE55A7671B392A8E00D473B0 /* Filter_LUT */ = {
+			isa = PBXGroup;
+			children = (
+				EE55A7681B392A8E00D473B0 /* filter_lut_1.png */,
+				EE55A7691B392A8E00D473B0 /* filter_lut_2.png */,
+				EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */,
+				EE55A76B1B392A8E00D473B0 /* filter_lut_4.png */,
+			);
+			path = Filter_LUT;
+			sourceTree = "<group>";
+		};
+		EE55A7701B392BE300D473B0 /* FeSlideFilterView */ = {
+			isa = PBXGroup;
+			children = (
+				EE55A7711B392BE300D473B0 /* FeSlideFilterView.h */,
+				EE55A7721B392BE300D473B0 /* FeSlideFilterView.m */,
+			);
+			path = FeSlideFilterView;
+			sourceTree = "<group>";
+		};
+		EE55A7771B39310900D473B0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EE55A7801B39315F00D473B0 /* sample.jpg */,
+				EE55A77C1B39315300D473B0 /* done.png */,
+				EE55A77D1B39315300D473B0 /* done@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		EE9457611B2572C100C305EE = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +154,7 @@
 		EE94576C1B2572C100C305EE /* MyImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				EE55A7701B392BE300D473B0 /* FeSlideFilterView */,
 				EEF675151B31804200161F87 /* Category-Filter */,
 				EE9457711B2572C100C305EE /* AppDelegate.h */,
 				EE9457721B2572C100C305EE /* AppDelegate.m */,
@@ -129,6 +180,8 @@
 		EE94576D1B2572C100C305EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE55A7771B39310900D473B0 /* images */,
+				EE55A7671B392A8E00D473B0 /* Filter_LUT */,
 				EE94576E1B2572C100C305EE /* Info.plist */,
 				EE94576F1B2572C100C305EE /* main.m */,
 			);
@@ -161,6 +214,8 @@
 				EEF6751E1B32BCAE00161F87 /* UIImage+Mark.m */,
 				EEF675191B3180C600161F87 /* CIFilter+Image.h */,
 				EEF6751A1B3180C600161F87 /* CIFilter+Image.m */,
+				EE55A7741B392DCF00D473B0 /* CIFilter+LUT.h */,
+				EE55A7751B392DCF00D473B0 /* CIFilter+LUT.m */,
 			);
 			path = "Category-Filter";
 			sourceTree = "<group>";
@@ -245,10 +300,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE55A76F1B392A8E00D473B0 /* filter_lut_4.png in Resources */,
+				EE55A7811B39315F00D473B0 /* sample.jpg in Resources */,
 				EE9457A01B2581DD00C305EE /* PhotoEditingViewController.xib in Resources */,
+				EE55A77E1B39315300D473B0 /* done.png in Resources */,
 				EE9457791B2572C100C305EE /* Main.storyboard in Resources */,
+				EE55A76D1B392A8E00D473B0 /* filter_lut_2.png in Resources */,
 				EE94577E1B2572C100C305EE /* LaunchScreen.xib in Resources */,
 				EE94577B1B2572C100C305EE /* Images.xcassets in Resources */,
+				EE55A76E1B392A8E00D473B0 /* filter_lut_3.png in Resources */,
+				EE55A77F1B39315300D473B0 /* done@2x.png in Resources */,
+				EE55A76C1B392A8E00D473B0 /* filter_lut_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +331,7 @@
 				EE9457731B2572C100C305EE /* AppDelegate.m in Sources */,
 				EE9457701B2572C100C305EE /* main.m in Sources */,
 				EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */,
+				EE55A7731B392BE300D473B0 /* FeSlideFilterView.m in Sources */,
 				EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */,
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
 				EE9457A61B258BB800C305EE /* CustomFilterButtonView.m in Sources */,
@@ -276,6 +339,7 @@
 				EE9457981B25733100C305EE /* SearchViewController.m in Sources */,
 				EE9457951B25732100C305EE /* HomeViewController.m in Sources */,
 				EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */,
+				EE55A7761B392DCF00D473B0 /* CIFilter+LUT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,12 @@
 # MyImageFilter
-图片滤镜效果
+	图片滤镜效果的实现方式：
 
-filter有127种效果
+	一种是使用系统自带的CIFilter类，实现滤镜效果。
+	另一种是用美工制作的
 
-分14个大类：
+
+
+1. CIFilter分14个大类：共有127种效果
 
 ```
 	kCICategoryDistortionEffect;扭曲效果，比如bump、旋转、hole
