@@ -8,6 +8,7 @@
 
 #import "PersonInfoViewController.h"
 #import "CameraRecordViewController.h"
+#import "RecorderViewController.h"
 
 @interface PersonInfoViewController ()
 
@@ -41,9 +42,10 @@
 //录像
 - (void)rightMenuButtonClicked {
     
-    CameraRecordViewController *controller = [[CameraRecordViewController alloc]init];
+    //CameraRecordViewController *controller = [[CameraRecordViewController alloc]init];
     //[self.navigationController pushViewController:controller animated:YES];
     
+    RecorderViewController *controller = [[RecorderViewController alloc]init];
     [self presentViewController:controller animated:YES completion:^{
         
     }];

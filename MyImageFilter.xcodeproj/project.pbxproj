@@ -48,6 +48,11 @@
 		EE55A7C21B3951BB00D473B0 /* CustomFilterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE55A7C11B3951BB00D473B0 /* CustomFilterButtonView.m */; };
 		EE7CADCB1B3968CB0099CB60 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7CADCA1B3968CB0099CB60 /* AssetsLibrary.framework */; };
 		EE7CADCD1B3968F40099CB60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7CADCC1B3968F40099CB60 /* AVFoundation.framework */; };
+		EE83CE471B39721500AECC81 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE401B39721500AECC81 /* AVCamRecorder.m */; };
+		EE83CE481B39721500AECC81 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE421B39721500AECC81 /* AVCamUtilities.m */; };
+		EE83CE491B39721500AECC81 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE441B39721500AECC81 /* CaptureManager.m */; };
+		EE83CE4A1B39721500AECC81 /* KZCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE461B39721500AECC81 /* KZCameraView.m */; };
+		EE83CE4D1B39723500AECC81 /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE4C1B39723500AECC81 /* RecorderViewController.m */; };
 		EE9457701B2572C100C305EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE94576F1B2572C100C305EE /* main.m */; };
 		EE9457731B2572C100C305EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9457721B2572C100C305EE /* AppDelegate.m */; };
 		EE9457791B2572C100C305EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE9457771B2572C100C305EE /* Main.storyboard */; };
@@ -120,6 +125,16 @@
 		EE55A7C11B3951BB00D473B0 /* CustomFilterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFilterButtonView.m; sourceTree = "<group>"; };
 		EE7CADCA1B3968CB0099CB60 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		EE7CADCC1B3968F40099CB60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EE83CE3F1B39721500AECC81 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		EE83CE401B39721500AECC81 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		EE83CE411B39721500AECC81 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		EE83CE421B39721500AECC81 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
+		EE83CE431B39721500AECC81 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureManager.h; sourceTree = "<group>"; };
+		EE83CE441B39721500AECC81 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
+		EE83CE451B39721500AECC81 /* KZCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZCameraView.h; sourceTree = "<group>"; };
+		EE83CE461B39721500AECC81 /* KZCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZCameraView.m; sourceTree = "<group>"; };
+		EE83CE4B1B39723500AECC81 /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderViewController.h; sourceTree = "<group>"; };
+		EE83CE4C1B39723500AECC81 /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderViewController.m; sourceTree = "<group>"; };
 		EE94576A1B2572C100C305EE /* MyImageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyImageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94576E1B2572C100C305EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE94576F1B2572C100C305EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +155,7 @@
 		EE94579C1B2581DD00C305EE /* PhotoEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditingViewController.h; sourceTree = "<group>"; };
 		EE94579D1B2581DD00C305EE /* PhotoEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditingViewController.m; sourceTree = "<group>"; };
 		EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditingViewController.xib; sourceTree = "<group>"; };
+		EEE277991B3973EB005DC33C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		EEF675161B31805C00161F87 /* UIImage+Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filter.h"; sourceTree = "<group>"; };
 		EEF675171B31805C00161F87 /* UIImage+Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filter.m"; sourceTree = "<group>"; };
 		EEF675191B3180C600161F87 /* CIFilter+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+Image.h"; sourceTree = "<group>"; };
@@ -235,6 +251,29 @@
 			path = CustomFilterView;
 			sourceTree = "<group>";
 		};
+		EE83CE3D1B39721500AECC81 /* VideoRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				EE83CE3E1B39721500AECC81 /* AVCam */,
+				EE83CE451B39721500AECC81 /* KZCameraView.h */,
+				EE83CE461B39721500AECC81 /* KZCameraView.m */,
+			);
+			path = VideoRecorder;
+			sourceTree = "<group>";
+		};
+		EE83CE3E1B39721500AECC81 /* AVCam */ = {
+			isa = PBXGroup;
+			children = (
+				EE83CE3F1B39721500AECC81 /* AVCamRecorder.h */,
+				EE83CE401B39721500AECC81 /* AVCamRecorder.m */,
+				EE83CE411B39721500AECC81 /* AVCamUtilities.h */,
+				EE83CE421B39721500AECC81 /* AVCamUtilities.m */,
+				EE83CE431B39721500AECC81 /* CaptureManager.h */,
+				EE83CE441B39721500AECC81 /* CaptureManager.m */,
+			);
+			path = AVCam;
+			sourceTree = "<group>";
+		};
 		EE9457611B2572C100C305EE = {
 			isa = PBXGroup;
 			children = (
@@ -261,8 +300,11 @@
 				EE55A7701B392BE300D473B0 /* FeSlideFilterView */,
 				EEF675151B31804200161F87 /* Category-Filter */,
 				EE55A7BF1B3951BB00D473B0 /* CustomFilterView */,
+				EE83CE3D1B39721500AECC81 /* VideoRecorder */,
 				EE9457711B2572C100C305EE /* AppDelegate.h */,
 				EE9457721B2572C100C305EE /* AppDelegate.m */,
+				EE83CE4B1B39723500AECC81 /* RecorderViewController.h */,
+				EE83CE4C1B39723500AECC81 /* RecorderViewController.m */,
 				EE9457931B25732100C305EE /* HomeViewController.h */,
 				EE9457941B25732100C305EE /* HomeViewController.m */,
 				EE9457961B25733100C305EE /* SearchViewController.h */,
@@ -288,6 +330,7 @@
 				EE55A7771B39310900D473B0 /* images */,
 				EE55A7671B392A8E00D473B0 /* Filter_LUT */,
 				EE94576E1B2572C100C305EE /* Info.plist */,
+				EEE277991B3973EB005DC33C /* PrefixHeader.pch */,
 				EE94576F1B2572C100C305EE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -461,18 +504,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE83CE481B39721500AECC81 /* AVCamUtilities.m in Sources */,
 				EE9457731B2572C100C305EE /* AppDelegate.m in Sources */,
 				EE9457701B2572C100C305EE /* main.m in Sources */,
 				EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */,
 				EE55A7731B392BE300D473B0 /* FeSlideFilterView.m in Sources */,
 				EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */,
+				EE83CE4D1B39723500AECC81 /* RecorderViewController.m in Sources */,
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
 				EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */,
 				EE55A7851B394E5900D473B0 /* CameraRecordViewController.m in Sources */,
 				EE55A7C21B3951BB00D473B0 /* CustomFilterButtonView.m in Sources */,
+				EE83CE491B39721500AECC81 /* CaptureManager.m in Sources */,
 				EE9457981B25733100C305EE /* SearchViewController.m in Sources */,
 				EE9457951B25732100C305EE /* HomeViewController.m in Sources */,
 				EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */,
+				EE83CE471B39721500AECC81 /* AVCamRecorder.m in Sources */,
+				EE83CE4A1B39721500AECC81 /* KZCameraView.m in Sources */,
 				EE55A7761B392DCF00D473B0 /* CIFilter+LUT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,11 +647,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyImageFilter/PrefixHeader.pch";
 				INFOPLIST_FILE = MyImageFilter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a726ba02-ec9f-4719-a159-67fa6e826e21";
+				PROVISIONING_PROFILE = "07c2e7c9-77de-425f-9488-59edfd26bdab";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -614,11 +663,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: jiang shiyong (32DK52XR3F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jiang shiyong (32DK52XR3F)";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MyImageFilter/PrefixHeader.pch";
 				INFOPLIST_FILE = MyImageFilter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a726ba02-ec9f-4719-a159-67fa6e826e21";
+				PROVISIONING_PROFILE = "07c2e7c9-77de-425f-9488-59edfd26bdab";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
