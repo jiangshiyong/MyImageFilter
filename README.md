@@ -1,12 +1,13 @@
 # MyImageFilter
 	图片滤镜效果的实现方式：
 
-	一种是使用系统自带的CIFilter类，实现滤镜效果。
-	另一种是用美工制作的
+	一种方式是使用系统自带的CIFilter类，实现滤镜效果。
+	另一种方式是依靠美工，利用Color Lookup Table(ColorLUT)的技术，即需要一张cube映射表，这样表就是张颜色表。
 
 
+第一种方式：
 
-1. CIFilter分14个大类：共有127种效果
+CIFilter分14个大类：共有127种效果
 
 ```
 	kCICategoryDistortionEffect;扭曲效果，比如bump、旋转、hole
@@ -75,6 +76,51 @@ CIPhotoEffectChrome:铬黄
 
 
 
+第二种方式:
+
+在同一张图片上覆盖一层滤镜。利用Color Lookup Table(ColorLUT)的技术，即需要一张cube映射表，这样表就是张颜色表，需要美工提供几张颜色表。
+
+
+```
+
+	- (void)initPhotoFilter {
+    
+    	_arrPhoto = [NSMutableArray arrayWithCapacity:5];
+    
+    	for (NSInteger i = 0; i < 5; i++)
+    	{
+        if (i == 4)
+        {
+            UIImage *image = [self imageDependOnDevice];
+            [_arrPhoto addObject:image];
+        }
+        else
+        {
+            NSString *nameLUT = [NSString stringWithFormat:@"filter_lut_%d",i + 1];
+            
+            //////////
+            // FIlter with LUT
+            // Load photo
+            UIImage *photo = [self imageDependOnDevice];
+            
+            // Create filter
+            CIFilter *lutFilter = [CIFilter filterWithLUT:nameLUT dimension:64];
+            
+            // Set parameter
+            CIImage *ciImage = [[CIImage alloc] initWithImage:photo];
+            [lutFilter setValue:ciImage forKey:@"inputImage"];
+            CIImage *outputImage = [lutFilter outputImage];
+            
+            CIContext *context = [CIContext contextWithOptions:[NSDictionary dictionaryWithObject:(__bridge id)(CGColorSpaceCreateDeviceRGB()) forKey:kCIContextWorkingColorSpace]];
+            
+            UIImage *newImage = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
+            
+            [_arrPhoto addObject:newImage];
+        	}
+    	}
+	}
+
+```
 
 
 
@@ -96,6 +142,13 @@ CIPhotoEffectChrome:铬黄
 
 
 
+
+
+参考资料：
+
+http://huangtw-blog.logdown.com/posts/176980-ios-quickly-made-using-a-cicolorcube-filter
+
+http://blog.csdn.net/zhangao0086/article/details/39120331
 
 
 

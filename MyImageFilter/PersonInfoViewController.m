@@ -7,6 +7,7 @@
 //
 
 #import "PersonInfoViewController.h"
+#import "CameraRecordViewController.h"
 
 @interface PersonInfoViewController ()
 
@@ -18,6 +19,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"个人";
+    
+    UIView *rightMenuBgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 65, 44)];
+    rightMenuBgView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *rightMenuButton =[UIButton buttonWithType:UIButtonTypeCustom];
+    rightMenuButton.frame = CGRectMake(15, (rightMenuBgView.frame.size.height-44)/2, rightMenuBgView.frame.size.width, 44);
+    rightMenuButton.backgroundColor = [UIColor clearColor];
+    rightMenuButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    [rightMenuButton setTitle:@"录像" forState:UIControlStateNormal];
+    [rightMenuButton setTitle:@"录像" forState:UIControlStateHighlighted];
+    [rightMenuButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightMenuButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [rightMenuButton addTarget:self action:@selector(rightMenuButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [rightMenuBgView addSubview:rightMenuButton];
+    
+    UIBarButtonItem *rightmenuBarItem = [[UIBarButtonItem alloc]initWithCustomView:rightMenuBgView];
+    self.navigationItem.rightBarButtonItem = rightmenuBarItem;
+}
+
+//录像
+- (void)rightMenuButtonClicked {
+    
+    CameraRecordViewController *controller = [[CameraRecordViewController alloc]init];
+    //[self.navigationController pushViewController:controller animated:YES];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
