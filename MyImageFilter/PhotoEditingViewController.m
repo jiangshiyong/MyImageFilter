@@ -57,7 +57,7 @@
      NSString *kCICategoryFilterGenerator;
      */
     
-    [self showAllFilters];
+    //[self showAllFilters];
     
     _filters = [NSArray arrayWithArray:[CIFilter filterNamesInCategories:@[kCICategoryColorEffect]]];
     /*
@@ -92,7 +92,7 @@
 //                 @"CIPhotoEffectMono", @"CIPhotoEffectNoir", @"CIPhotoEffectProcess",
 //                 @"CIPhotoEffectTonal", @"CIPhotoEffectTransfer",@"CIPhotoEffectFade"];
     _inputImage = [CIImage imageWithCGImage:[self.photoImage CGImage]];
-    _filteredImages = [self preFilterImages];
+
     [self initContentView];
 }
 
@@ -181,6 +181,8 @@
 
 - (void)layoutScorllViewSubViews {
 
+    _filteredImages = [self preFilterImages];
+    
     for (CustomFilterButtonView *customView in self.filterScrollView.subviews) {
         
         [customView removeFromSuperview];

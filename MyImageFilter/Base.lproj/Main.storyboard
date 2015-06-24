@@ -17,9 +17,31 @@
                     <view key="view" contentMode="scaleToFill" id="Vle-fN-Rww">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Il-ZG-rmz">
+                                <rect key="frame" x="15" y="64" width="585" height="487"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S7m-T9-d1b">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Il-ZG-rmz" firstAttribute="leading" secondItem="Vle-fN-Rww" secondAttribute="leading" id="3pM-N5-G6a"/>
+                            <constraint firstItem="3FU-iv-y7i" firstAttribute="top" secondItem="5Il-ZG-rmz" secondAttribute="bottom" id="62b-XJ-whQ"/>
+                            <constraint firstAttribute="trailing" secondItem="5Il-ZG-rmz" secondAttribute="trailing" id="Kh6-qw-LsF"/>
+                            <constraint firstItem="5Il-ZG-rmz" firstAttribute="top" secondItem="OGw-Wp-8oj" secondAttribute="bottom" id="VuF-Zw-8kk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c9o-f1-oJ5"/>
+                    <connections>
+                        <outlet property="layout" destination="S7m-T9-d1b" id="Flg-x8-LoI"/>
+                        <outlet property="photosCollectionView" destination="5Il-ZG-rmz" id="hhr-KF-Dtu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1RP-w0-SRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +311,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxq-QJ-V36" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="35" y="242"/>
+        </scene>
+        <!--Image Picker View Controller-->
+        <scene sceneID="5Da-T9-yvx">
+            <objects>
+                <viewController storyboardIdentifier="ImagePickerViewController" id="dUE-U7-qkB" customClass="ImagePickerViewController" customModule="ImagePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nLX-il-1t6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yg0-ia-YYB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DGK-nO-Ys9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxs-BX-iPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="781"/>
         </scene>
         <!--Recorder View Controller-->
         <scene sceneID="ekP-Tx-s9t">

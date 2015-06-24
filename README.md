@@ -131,7 +131,11 @@ CIPhotoEffectChrome:铬黄
 
 
 
+# MyRecordingVideo
+	视频录制的实现方式：
 
+	一种方式是使用系统自带的UIImagePickerController类，调用系统自带的录制效果。
+	另一种方式是依靠AVFoundation类库里面的视频输出类AVCaptureVideoPreviewLayer,比较第一种方式有扩展性。
 
 
 

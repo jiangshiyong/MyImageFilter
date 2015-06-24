@@ -9,6 +9,7 @@
 #import "PersonInfoViewController.h"
 #import "CameraRecordViewController.h"
 #import "RecorderViewController.h"
+#import "ImagePickerViewController.h"
 
 @interface PersonInfoViewController ()
 
@@ -45,10 +46,15 @@
     //CameraRecordViewController *controller = [[CameraRecordViewController alloc]init];
     //[self.navigationController pushViewController:controller animated:YES];
     
-    RecorderViewController *controller = [[RecorderViewController alloc]init];
+//    RecorderViewController *controller = [[RecorderViewController alloc]init];
+//    [self presentViewController:controller animated:YES completion:^{
+//        
+//    }];
+    
+    ImagePickerViewController *controller = [[ImagePickerViewController alloc]init];
     [self presentViewController:controller animated:YES completion:^{
-        
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

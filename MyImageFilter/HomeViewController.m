@@ -8,12 +8,24 @@
 
 #import "HomeViewController.h"
 #import "PhotoEditingViewController.h"
-@interface HomeViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+#import "PhotoCollectionViewCell.h"
+#include <AssetsLibrary/AssetsLibrary.h>
 
+@interface HomeViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *photosCollectionView;//图片列表
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *layout;
+@property (strong, nonatomic) NSMutableArray *photosArray;//
+
+@property (strong, nonatomic) ALAssetsLibrary *library;
+
+@property (strong, nonatomic) NSArray *imageArray;
+
+@property (strong, nonatomic) NSMutableArray *mutableArray;
 @end
 
 @implementation HomeViewController
+static int count=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,6 +48,27 @@
     
     UIBarButtonItem *rightmenuBarItem = [[UIBarButtonItem alloc]initWithCustomView:rightMenuBgView];
     self.navigationItem.rightBarButtonItem = rightmenuBarItem;
+    
+    self.photosArray = [[NSMutableArray alloc]init];
+    
+    [self getAllPictures];
+    
+    int itemWidth = (self.view.bounds.size.width-5)/3-5;
+    [_layout setItemSize:CGSizeMake(itemWidth, itemWidth)];
+    _layout.minimumInteritemSpacing = 2.0f;
+    [_layout setSectionInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [_layout setMinimumInteritemSpacing:0.5];
+    [_layout setMinimumLineSpacing:5];
+    
+    self.photosCollectionView.backgroundColor = [UIColor whiteColor];
+    
+    [self.photosCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PhotoCollectionViewCell class]) bundle:nil]
+                      forCellWithReuseIdentifier:NSStringFromClass([PhotoCollectionViewCell class])];
+    self.photosCollectionView.delegate= self;
+    self.photosCollectionView.dataSource = self;
+    self.photosCollectionView.scrollEnabled = YES;
+    [self.photosCollectionView reloadData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,6 +90,168 @@
     
     [super viewDidDisappear:animated];
 }
+
+-(void)getAllPictures {
+    
+    _imageArray=[[NSArray alloc] init];
+    
+    _mutableArray =[[NSMutableArray alloc]init];
+    
+    NSMutableArray* assetURLDictionaries = [[NSMutableArray alloc] init];
+    
+    _library = [[ALAssetsLibrary alloc] init];
+    
+    void (^assetEnumerator)( ALAsset *, NSUInteger, BOOL *) = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
+        
+        if(result != nil) {
+            
+            if([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+                
+                [assetURLDictionaries addObject:[result valueForProperty:ALAssetPropertyURLs]];
+                
+                NSURL *url= (NSURL*) [[result defaultRepresentation]url];
+                
+                [_library assetForURL:url
+                 
+                          resultBlock:^(ALAsset *asset) {
+                              
+                              [_mutableArray addObject:[UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]]];
+                              
+                              if ([_mutableArray count]==count)
+                                  
+                              {
+                                  
+                                  _imageArray=[[NSArray alloc] initWithArray:_mutableArray];
+                                  
+                                  [self allPhotosCollected:_imageArray];
+                                  
+                              }
+                          }
+                 
+                         failureBlock:^(NSError *error){ NSLog(@"operation was not successfull!"); } ];
+            }
+        }
+    };
+
+    NSMutableArray *assetGroups = [[NSMutableArray alloc] init];
+    
+    
+    void (^ assetGroupEnumerator) ( ALAssetsGroup *, BOOL *)= ^(ALAssetsGroup *group, BOOL *stop) {
+        
+        if(group != nil) {
+            
+            [group enumerateAssetsUsingBlock:assetEnumerator];
+            
+            [assetGroups addObject:group];
+            
+            count=[group numberOfAssets];
+            
+        }
+        
+    };
+    
+    assetGroups = [[NSMutableArray alloc] init];
+
+    [_library enumerateGroupsWithTypes:ALAssetsGroupAll
+     
+                           usingBlock:assetGroupEnumerator
+     
+                         failureBlock:^(NSError *error) {NSLog(@"There is an error");}];
+}
+
+
+
+- (void)allPhotosCollected:(NSArray*)imgArray {
+    
+    //write your code here after getting all the photos from library...
+    
+    NSLog(@"all pictures are %@",imgArray);
+    [self.photosArray addObjectsFromArray:imgArray];
+    [self.photosCollectionView reloadData];
+}
+
+#pragma mark
+#pragma mark - UICollectionView Datasource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    if (collectionView==self.photosCollectionView) {
+        return 1;
+        //        if ([self.hotSearchKeyArray count]%3==0) {
+        //
+        //            return  [self.hotSearchKeyArray count]/3;
+        //        }else{
+        //            return  [self.hotSearchKeyArray count]/3+1;
+        //        }
+    }
+    return 0;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    if (collectionView==self.photosCollectionView) {
+        
+        return [self.photosArray count]+1;
+    }
+    
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (collectionView==self.photosCollectionView) {
+        
+        PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([PhotoCollectionViewCell class])
+                                                                                         forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor colorWithRed:245.0f/255 green:245.0f/255 blue:245.0f/255 alpha:1];
+        UIView *tempBgView = [[UIView alloc] initWithFrame:cell.frame];
+        tempBgView.backgroundColor = [UIColor colorWithRed:235.0f/255 green:235.0f/255 blue:235.0f/255 alpha:1];
+        cell.selectedBackgroundView = tempBgView;
+
+        if (indexPath.row>0) {
+            
+            cell.imageView.image = (UIImage *)self.photosArray[indexPath.row-1];
+        }else{
+        
+            cell.imageView.image = [UIImage imageNamed:@"icon_facial_btn_take.png"];
+        }
+        return cell;
+        
+    }
+    return nil;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //    if ([collectionView isEqual:self.hotSearchKeyCollectionView]) {
+    //        HotSearchKeyCollectionViewCell *cell = (HotSearchKeyCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    //        [cell setBackgroundColor:UIColorWithHex(0xebebeb)];
+    //    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section==0) {
+        
+        if (indexPath.row<[self.photosArray count]) {
+            
+            if (indexPath.row==0) {
+                
+                [self cameraButtonClicked];
+            }else{
+                
+                PhotoEditingViewController *viewController = [[PhotoEditingViewController alloc]init];
+                viewController.photoImage = self.photosArray[indexPath.row-1];
+                [self.navigationController pushViewController:viewController animated:YES];
+            }
+        }
+    }
+}
+
 
 //相册功能区
 - (void)rightMenuButtonClicked {
@@ -81,14 +276,14 @@
     }
 }
 
-- (IBAction)cameraButtonClicked:(id)sender {
+- (void)cameraButtonClicked{
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
         imagePickerController.delegate = self;
         imagePickerController.allowsEditing = YES;
-        imagePickerController.sourceType= UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        imagePickerController.sourceType= UIImagePickerControllerSourceTypeCamera;
         [self presentViewController:imagePickerController animated:YES completion:^{
         }];
         

@@ -64,6 +64,9 @@
 		EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE94579A1B25739C00C305EE /* PersonInfoViewController.m */; };
 		EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE94579D1B2581DD00C305EE /* PhotoEditingViewController.m */; };
 		EE9457A01B2581DD00C305EE /* PhotoEditingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */; };
+		EEA5E69A1B3A9F0800D46934 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA5E6981B3A9F0800D46934 /* PhotoCollectionViewCell.m */; };
+		EEA5E69B1B3A9F0800D46934 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA5E6991B3A9F0800D46934 /* PhotoCollectionViewCell.xib */; };
+		EEE2779C1B3A5F38005DC33C /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE2779B1B3A5F38005DC33C /* ImagePickerViewController.m */; };
 		EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF675171B31805C00161F87 /* UIImage+Filter.m */; };
 		EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6751A1B3180C600161F87 /* CIFilter+Image.m */; };
 		EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6751E1B32BCAE00161F87 /* UIImage+Mark.m */; };
@@ -155,7 +158,12 @@
 		EE94579C1B2581DD00C305EE /* PhotoEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditingViewController.h; sourceTree = "<group>"; };
 		EE94579D1B2581DD00C305EE /* PhotoEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditingViewController.m; sourceTree = "<group>"; };
 		EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditingViewController.xib; sourceTree = "<group>"; };
+		EEA5E6971B3A9F0800D46934 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		EEA5E6981B3A9F0800D46934 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		EEA5E6991B3A9F0800D46934 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEE277991B3973EB005DC33C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		EEE2779A1B3A5F38005DC33C /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
+		EEE2779B1B3A5F38005DC33C /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
 		EEF675161B31805C00161F87 /* UIImage+Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filter.h"; sourceTree = "<group>"; };
 		EEF675171B31805C00161F87 /* UIImage+Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filter.m"; sourceTree = "<group>"; };
 		EEF675191B3180C600161F87 /* CIFilter+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+Image.h"; sourceTree = "<group>"; };
@@ -301,8 +309,9 @@
 				EEF675151B31804200161F87 /* Category-Filter */,
 				EE55A7BF1B3951BB00D473B0 /* CustomFilterView */,
 				EE83CE3D1B39721500AECC81 /* VideoRecorder */,
-				EE9457711B2572C100C305EE /* AppDelegate.h */,
+				EEA5E6961B3A9EC800D46934 /* CustomView */,
 				EE9457721B2572C100C305EE /* AppDelegate.m */,
+				EE9457711B2572C100C305EE /* AppDelegate.h */,
 				EE83CE4B1B39723500AECC81 /* RecorderViewController.h */,
 				EE83CE4C1B39723500AECC81 /* RecorderViewController.m */,
 				EE9457931B25732100C305EE /* HomeViewController.h */,
@@ -314,6 +323,8 @@
 				EE94579E1B2581DD00C305EE /* PhotoEditingViewController.xib */,
 				EE55A7821B394E5900D473B0 /* CameraRecordViewController.h */,
 				EE55A7831B394E5900D473B0 /* CameraRecordViewController.m */,
+				EEE2779A1B3A5F38005DC33C /* ImagePickerViewController.h */,
+				EEE2779B1B3A5F38005DC33C /* ImagePickerViewController.m */,
 				EE9457991B25739C00C305EE /* PersonInfoViewController.h */,
 				EE94579A1B25739C00C305EE /* PersonInfoViewController.m */,
 				EE9457771B2572C100C305EE /* Main.storyboard */,
@@ -351,6 +362,16 @@
 				EE9457881B2572C100C305EE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EEA5E6961B3A9EC800D46934 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				EEA5E6971B3A9F0800D46934 /* PhotoCollectionViewCell.h */,
+				EEA5E6981B3A9F0800D46934 /* PhotoCollectionViewCell.m */,
+				EEA5E6991B3A9F0800D46934 /* PhotoCollectionViewCell.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		EEF675151B31804200161F87 /* Category-Filter */ = {
@@ -469,6 +490,7 @@
 				EE55A7A81B394F6000D473B0 /* btn_cancel_a@2x.png in Resources */,
 				EE55A7BB1B394F6000D473B0 /* icon_facial_btn_take.png in Resources */,
 				EE94577E1B2572C100C305EE /* LaunchScreen.xib in Resources */,
+				EEA5E69B1B3A9F0800D46934 /* PhotoCollectionViewCell.xib in Resources */,
 				EE94577B1B2572C100C305EE /* Images.xcassets in Resources */,
 				EE55A7B01B394F6000D473B0 /* btn_video_flash_open@2x.png in Resources */,
 				EE55A7A31B394F6000D473B0 /* bg_countdown_view.png in Resources */,
@@ -514,8 +536,10 @@
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
 				EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */,
 				EE55A7851B394E5900D473B0 /* CameraRecordViewController.m in Sources */,
+				EEE2779C1B3A5F38005DC33C /* ImagePickerViewController.m in Sources */,
 				EE55A7C21B3951BB00D473B0 /* CustomFilterButtonView.m in Sources */,
 				EE83CE491B39721500AECC81 /* CaptureManager.m in Sources */,
+				EEA5E69A1B3A9F0800D46934 /* PhotoCollectionViewCell.m in Sources */,
 				EE9457981B25733100C305EE /* SearchViewController.m in Sources */,
 				EE9457951B25732100C305EE /* HomeViewController.m in Sources */,
 				EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */,
