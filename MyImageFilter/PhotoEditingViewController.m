@@ -248,6 +248,7 @@
 
 - (void)customFilterButtonView:(CustomFilterButtonView *)customFilterButtonView didSelectFilterImage:(UIImage *)filterImage {
 
+    NSLog(@"self.markImageView.frame.origin.x====%f",self.markImageView.frame.origin.x);
     //添加图片水印 [UIImage imageNamed:@"loading1_ios"]
     //self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
     self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake(self.markImageView.frame.origin.x, self.markImageView.frame.origin.y, self.markImageView.frame.size.width, self.markImageView.frame.size.height)];//markImageView
@@ -297,6 +298,7 @@
     if (panGestureRecognizer.state == UIGestureRecognizerStateBegan || panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
         CGPoint translation = [panGestureRecognizer translationInView:view.superview];
         [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
+        //self.markImageView.center = (CGPoint){view.center.x + translation.x, view.center.y + translation.y};
         [panGestureRecognizer setTranslation:CGPointZero inView:view.superview];
     }
 }
