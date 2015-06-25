@@ -156,9 +156,13 @@
     
     //self.markImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];
     
+    UIView *bgPhotoImageView = [[UIView alloc]initWithFrame:self.myPhotoImageView.frame];
+    bgPhotoImageView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:bgPhotoImageView];
+    
     self.markImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, self.myPhotoImageView.frame.origin.y+(self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];
     self.markImageView.image = [UIImage imageNamed:@"loading1_ios"];
-    [self.view addSubview:self.markImageView];
+    [bgPhotoImageView addSubview:self.markImageView];
     
     [self.markImageView setMultipleTouchEnabled:YES];
     [self.markImageView setUserInteractionEnabled:YES];
