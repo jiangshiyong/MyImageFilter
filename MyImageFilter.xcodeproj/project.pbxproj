@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE030AE41B3BD8B90061986A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE030ADF1B3BD8B90061986A /* SVIndefiniteAnimatedView.m */; };
+		EE030AE51B3BD8B90061986A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE030AE11B3BD8B90061986A /* SVProgressHUD.bundle */; };
+		EE030AE61B3BD8B90061986A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EE030AE31B3BD8B90061986A /* SVProgressHUD.m */; };
 		EE55A76C1B392A8E00D473B0 /* filter_lut_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7681B392A8E00D473B0 /* filter_lut_1.png */; };
 		EE55A76D1B392A8E00D473B0 /* filter_lut_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7691B392A8E00D473B0 /* filter_lut_2.png */; };
 		EE55A76E1B392A8E00D473B0 /* filter_lut_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */; };
@@ -83,6 +86,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE030ADE1B3BD8B90061986A /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		EE030ADF1B3BD8B90061986A /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		EE030AE01B3BD8B90061986A /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		EE030AE11B3BD8B90061986A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		EE030AE21B3BD8B90061986A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		EE030AE31B3BD8B90061986A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		EE55A7681B392A8E00D473B0 /* filter_lut_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_1.png; sourceTree = "<group>"; };
 		EE55A7691B392A8E00D473B0 /* filter_lut_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_2.png; sourceTree = "<group>"; };
 		EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_3.png; sourceTree = "<group>"; };
@@ -192,6 +201,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE030ADC1B3BD8B00061986A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE030ADD1B3BD8B90061986A /* SVProgressHUD */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EE030ADD1B3BD8B90061986A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EE030ADE1B3BD8B90061986A /* SVIndefiniteAnimatedView.h */,
+				EE030ADF1B3BD8B90061986A /* SVIndefiniteAnimatedView.m */,
+				EE030AE01B3BD8B90061986A /* SVProgressHUD-Prefix.pch */,
+				EE030AE11B3BD8B90061986A /* SVProgressHUD.bundle */,
+				EE030AE21B3BD8B90061986A /* SVProgressHUD.h */,
+				EE030AE31B3BD8B90061986A /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		EE55A7671B392A8E00D473B0 /* Filter_LUT */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +335,7 @@
 		EE94576C1B2572C100C305EE /* MyImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				EE030ADC1B3BD8B00061986A /* Utils */,
 				EE55A7701B392BE300D473B0 /* FeSlideFilterView */,
 				EEF675151B31804200161F87 /* Category-Filter */,
 				EE55A7BF1B3951BB00D473B0 /* CustomFilterView */,
@@ -474,6 +505,7 @@
 				EE55A7AC1B394F6000D473B0 /* btn_tabBar_bg@2x.png in Resources */,
 				EE55A7811B39315F00D473B0 /* sample.jpg in Resources */,
 				EE55A7A41B394F6000D473B0 /* bg_countdown_view@2x.png in Resources */,
+				EE030AE51B3BD8B90061986A /* SVProgressHUD.bundle in Resources */,
 				EE55A7B61B394F6000D473B0 /* icon_btn_camera_flash_auto@2x.png in Resources */,
 				EE9457A01B2581DD00C305EE /* PhotoEditingViewController.xib in Resources */,
 				EE55A7BD1B394F6000D473B0 /* sc_btn_take.png in Resources */,
@@ -531,9 +563,11 @@
 				EE9457701B2572C100C305EE /* main.m in Sources */,
 				EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */,
 				EE55A7731B392BE300D473B0 /* FeSlideFilterView.m in Sources */,
+				EE030AE41B3BD8B90061986A /* SVIndefiniteAnimatedView.m in Sources */,
 				EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */,
 				EE83CE4D1B39723500AECC81 /* RecorderViewController.m in Sources */,
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
+				EE030AE61B3BD8B90061986A /* SVProgressHUD.m in Sources */,
 				EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */,
 				EE55A7851B394E5900D473B0 /* CameraRecordViewController.m in Sources */,
 				EEE2779C1B3A5F38005DC33C /* ImagePickerViewController.m in Sources */,

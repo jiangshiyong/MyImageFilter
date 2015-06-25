@@ -134,6 +134,23 @@
 
 - (void)initContentView {
     
+    UIView *rightMenuBgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 65, 44)];
+    rightMenuBgView.backgroundColor = [UIColor clearColor];
+    
+    UIButton *rightMenuButton =[UIButton buttonWithType:UIButtonTypeCustom];
+    rightMenuButton.frame = CGRectMake(15, (rightMenuBgView.frame.size.height-44)/2, rightMenuBgView.frame.size.width, 44);
+    rightMenuButton.backgroundColor = [UIColor clearColor];
+    rightMenuButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    [rightMenuButton setTitle:@"Save" forState:UIControlStateNormal];
+    [rightMenuButton setTitle:@"Save" forState:UIControlStateHighlighted];
+    [rightMenuButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightMenuButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [rightMenuButton addTarget:self action:@selector(rightMenuButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [rightMenuBgView addSubview:rightMenuButton];
+    
+    UIBarButtonItem *rightmenuBarItem = [[UIBarButtonItem alloc]initWithCustomView:rightMenuBgView];
+    self.navigationItem.rightBarButtonItem = rightmenuBarItem;
+    
     self.myPhotoImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.myPhotoImageView.image = self.photoImage;
     
@@ -157,6 +174,29 @@
         
         [weakSelf layoutScorllViewSubViews];
     });
+}
+
+-(void)rightMenuButtonClicked {
+
+    [self saveImageToAlbum];
+}
+
+- (void)saveImageToAlbum{
+    
+    UIImageWriteToSavedPhotosAlbum(self.myPhotoImageView.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSString *message = @"呵呵";
+    if (!error) {
+        message = @"成功保存到相册";
+    }else{
+        message = [error description];
+    }
+    //[SVProgressHUD showWithStatus:message];
+    [SVProgressHUD showSuccessWithStatus:message];
+    NSLog(@"message is %@",message);
 }
 
 #pragma mark - Utility Methods

@@ -62,8 +62,7 @@ static int count=0;
     
     self.photosCollectionView.backgroundColor = [UIColor whiteColor];
     
-    [self.photosCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PhotoCollectionViewCell class]) bundle:nil]
-                      forCellWithReuseIdentifier:NSStringFromClass([PhotoCollectionViewCell class])];
+    [self.photosCollectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PhotoCollectionViewCell class]) bundle:nil]forCellWithReuseIdentifier:NSStringFromClass([PhotoCollectionViewCell class])];
     self.photosCollectionView.delegate= self;
     self.photosCollectionView.dataSource = self;
     self.photosCollectionView.scrollEnabled = YES;
@@ -132,9 +131,8 @@ static int count=0;
             }
         }
     };
-
-    NSMutableArray *assetGroups = [[NSMutableArray alloc] init];
     
+    NSMutableArray *assetGroups = [[NSMutableArray alloc] init];
     
     void (^ assetGroupEnumerator) ( ALAssetsGroup *, BOOL *)= ^(ALAssetsGroup *group, BOOL *stop) {
         
@@ -151,12 +149,12 @@ static int count=0;
     };
     
     assetGroups = [[NSMutableArray alloc] init];
-
+    
     [_library enumerateGroupsWithTypes:ALAssetsGroupAll
      
-                           usingBlock:assetGroupEnumerator
+                            usingBlock:assetGroupEnumerator
      
-                         failureBlock:^(NSError *error) {NSLog(@"There is an error");}];
+                          failureBlock:^(NSError *error) {NSLog(@"There is an error");}];
 }
 
 
@@ -252,7 +250,6 @@ static int count=0;
     }
 }
 
-
 //相册功能区
 - (void)rightMenuButtonClicked {
     
@@ -276,6 +273,7 @@ static int count=0;
     }
 }
 
+//拍照功能
 - (void)cameraButtonClicked{
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -329,7 +327,6 @@ static int count=0;
         viewController.photoImage = image;
         [self.navigationController pushViewController:viewController animated:YES];
     }];
-    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
