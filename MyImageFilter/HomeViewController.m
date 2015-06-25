@@ -50,8 +50,7 @@ static int count=0;
     self.navigationItem.rightBarButtonItem = rightmenuBarItem;
     
     self.photosArray = [[NSMutableArray alloc]init];
-    
-    [self getAllPictures];
+
     
     int itemWidth = (self.view.bounds.size.width-5)/3-5;
     [_layout setItemSize:CGSizeMake(itemWidth, itemWidth)];
@@ -73,6 +72,8 @@ static int count=0;
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    [self getAllPictures];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -164,6 +165,7 @@ static int count=0;
     //write your code here after getting all the photos from library...
     
     NSLog(@"all pictures are %@",imgArray);
+    [self.photosArray removeAllObjects];
     [self.photosArray addObjectsFromArray:imgArray];
     [self.photosCollectionView reloadData];
 }

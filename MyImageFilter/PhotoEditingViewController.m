@@ -168,6 +168,8 @@
     self.largeFrame = CGRectMake(0, 0 - self.myPhotoImageView.frame.size.height, 3 * self.oldFrame.size.width, 3 * self.oldFrame.size.height);
     [self addGestureRecognizerToView:self.markImageView];
     
+    
+    [SVProgressHUD showWithStatus:@"加载中"];
     __weak PhotoEditingViewController *weakSelf = self;
     //延后执行某个方法
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -241,12 +243,14 @@
             [self.filterScrollView addSubview:customView];
         }
     }
+    [SVProgressHUD dismiss];
 }
 
 - (void)customFilterButtonView:(CustomFilterButtonView *)customFilterButtonView didSelectFilterImage:(UIImage *)filterImage {
 
     //添加图片水印 [UIImage imageNamed:@"loading1_ios"]
-    self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
+    //self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2, 80, 80)];//filterImage;
+    self.myPhotoImageView.image = [filterImage addUseImage:filterImage addWaterMarkImage:self.markImageView.image withMarkRect:CGRectMake(self.markImageView.frame.origin.x, self.markImageView.frame.origin.y, self.markImageView.frame.size.width, self.markImageView.frame.size.height)];//markImageView
     //self.myPhotoImageView.image = [filterImage addUseImage:filterImage addMarkText:@"易迅易选" withMarkRect:CGRectMake((self.myPhotoImageView.frame.size.width-80)/2, (self.myPhotoImageView.frame.size.height-80)/2+20, 80, 80)];
 }
 
