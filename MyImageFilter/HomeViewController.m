@@ -22,10 +22,12 @@
 @property (strong, nonatomic) NSArray *imageArray;
 
 @property (strong, nonatomic) NSMutableArray *mutableArray;
+
+@property (nonatomic) NSInteger count;
 @end
 
 @implementation HomeViewController
-static int count=0;
+//static int count=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -117,7 +119,7 @@ static int count=0;
                               
                               [_mutableArray addObject:[UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]]];
                               
-                              if ([_mutableArray count]==count)
+                              if ([_mutableArray count]==_count)
                                   
                               {
                                   
@@ -143,10 +145,9 @@ static int count=0;
             
             [assetGroups addObject:group];
             
-            count=[group numberOfAssets];
+            _count = [group numberOfAssets];
             
         }
-        
     };
     
     assetGroups = [[NSMutableArray alloc] init];

@@ -80,6 +80,7 @@
                         <segue destination="VKy-lB-y5u" kind="relationship" relationship="viewControllers" id="BU8-g5-jIw"/>
                         <segue destination="5ZX-F0-QE7" kind="relationship" relationship="viewControllers" id="dbx-hb-5NS"/>
                         <segue destination="SUx-ip-xuC" kind="relationship" relationship="viewControllers" id="iZd-hg-cEe"/>
+                        <segue destination="hbz-7q-HLU" kind="relationship" relationship="viewControllers" id="AUT-NX-hPx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozm-tQ-gI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuy-ia-Czl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="-359"/>
+            <point key="canvasLocation" x="843" y="-359"/>
         </scene>
         <!--首页-->
         <scene sceneID="56z-iU-JYz">
@@ -311,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxq-QJ-V36" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="242"/>
+            <point key="canvasLocation" x="510" y="399"/>
         </scene>
         <!--Image Picker View Controller-->
         <scene sceneID="5Da-T9-yvx">
@@ -348,7 +349,165 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTb-Sa-Xfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="-371"/>
+            <point key="canvasLocation" x="1504" y="-371"/>
+        </scene>
+        <!--Capture Session Pipeline View Controller-->
+        <scene sceneID="KU2-Oc-RAV">
+            <objects>
+                <viewController storyboardIdentifier="captureSessionVC" id="dYL-mh-m5v" customClass="IDCaptureSessionPipelineViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w6s-iW-epg"/>
+                        <viewControllerLayoutGuide type="bottom" id="4OB-7i-bM2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xeq-8C-PXL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH4-we-swC">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A7h-jF-3kx"/>
+                                    <barButtonItem title="Close" id="2Uy-u8-u5Z">
+                                        <connections>
+                                            <action selector="closeCamera:" destination="dYL-mh-m5v" id="N8V-Cu-yjV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MWj-4R-Abf"/>
+                                    <barButtonItem title="Record" id="xbD-FA-kGu">
+                                        <color key="tintColor" red="0.96862751250000001" green="0.0" blue="0.058823533359999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="toggleRecording:" destination="dYL-mh-m5v" id="Qag-Vp-hSI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r2t-5g-37L"/>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kH4-we-swC" secondAttribute="trailing" id="3h4-42-3il"/>
+                            <constraint firstItem="kH4-we-swC" firstAttribute="leading" secondItem="xeq-8C-PXL" secondAttribute="leading" id="9n7-4B-mKP"/>
+                            <constraint firstItem="kH4-we-swC" firstAttribute="bottom" secondItem="4OB-7i-bM2" secondAttribute="top" id="X3R-pr-PYS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="xbD-FA-kGu" id="c5f-Sk-zbC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZn-cM-RwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="278"/>
+        </scene>
+        <!--Video Capture View Controller-->
+        <scene sceneID="rSM-if-htW">
+            <objects>
+                <tableViewController id="5WS-2i-2qt" customClass="VideoCaptureViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="M9y-M2-yUR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
+                        <sections>
+                            <tableViewSection headerTitle="Select a Video Capture Pipeline:" id="7hH-i2-7g8">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="wLE-gl-PU3" style="IBUITableViewCellStyleDefault" id="sp1-Wz-zZv">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sp1-Wz-zZv" id="UM5-dW-Qu1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIImagePickerController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wLE-gl-PU3">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="rVc-FK-Cja" detailTextLabel="9KA-pZ-gSQ" style="IBUITableViewCellStyleSubtitle" id="QDG-fk-1E9">
+                                        <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QDG-fk-1E9" id="9HL-tr-mVR">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="AVCaptureSession" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rVc-FK-Cja">
+                                                    <rect key="frame" x="15" y="5" width="135" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="with  AVMovieFileOutput" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9KA-pZ-gSQ">
+                                                    <rect key="frame" x="15" y="25" width="129" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="DV1-Vx-7zz" detailTextLabel="eIK-Cl-nLt" style="IBUITableViewCellStyleSubtitle" id="d0V-p0-PqM">
+                                        <rect key="frame" x="0.0" y="202" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d0V-p0-PqM" id="cWK-GC-tAX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="AVCaptureSession" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DV1-Vx-7zz">
+                                                    <rect key="frame" x="15" y="5" width="135" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="with AVAssetWriter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eIK-Cl-nLt">
+                                                    <rect key="frame" x="15" y="25" width="100" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="5WS-2i-2qt" id="LwG-L2-48D"/>
+                            <outlet property="delegate" destination="5WS-2i-2qt" id="p8z-Of-0Fn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ffl-2m-123"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZn-f5-n7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="-225"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="eZF-Yh-oXn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hbz-7q-HLU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Video" id="AeY-o5-ke9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qaj-Ac-1uo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5WS-2i-2qt" kind="relationship" relationship="rootViewController" id="n55-Xz-EQo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMc-Rw-iJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2281" y="-319"/>
         </scene>
     </scenes>
     <resources>

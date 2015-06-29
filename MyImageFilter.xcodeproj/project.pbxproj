@@ -10,6 +10,14 @@
 		EE030AE41B3BD8B90061986A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE030ADF1B3BD8B90061986A /* SVIndefiniteAnimatedView.m */; };
 		EE030AE51B3BD8B90061986A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EE030AE11B3BD8B90061986A /* SVProgressHUD.bundle */; };
 		EE030AE61B3BD8B90061986A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EE030AE31B3BD8B90061986A /* SVProgressHUD.m */; };
+		EE476AF41B40F607004CCCB9 /* IDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476AF11B40F607004CCCB9 /* IDFileManager.m */; };
+		EE476AF51B40F607004CCCB9 /* IDPermissionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476AF31B40F607004CCCB9 /* IDPermissionsManager.m */; };
+		EE476B011B40F926004CCCB9 /* IDAssetWriterCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476AF91B40F926004CCCB9 /* IDAssetWriterCoordinator.m */; };
+		EE476B021B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476AFB1B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.m */; };
+		EE476B031B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476AFE1B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.m */; };
+		EE476B041B40F926004CCCB9 /* IDCaptureSessionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476B001B40F926004CCCB9 /* IDCaptureSessionCoordinator.m */; };
+		EE476B081B40F9A4004CCCB9 /* IDImagePickerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476B071B40F9A4004CCCB9 /* IDImagePickerCoordinator.m */; };
+		EE476B0B1B4122B2004CCCB9 /* VideoCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE476B0A1B4122B2004CCCB9 /* VideoCaptureViewController.m */; };
 		EE55A76C1B392A8E00D473B0 /* filter_lut_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7681B392A8E00D473B0 /* filter_lut_1.png */; };
 		EE55A76D1B392A8E00D473B0 /* filter_lut_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7691B392A8E00D473B0 /* filter_lut_2.png */; };
 		EE55A76E1B392A8E00D473B0 /* filter_lut_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */; };
@@ -49,6 +57,7 @@
 		EE55A7BD1B394F6000D473B0 /* sc_btn_take.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7A11B394F6000D473B0 /* sc_btn_take.png */; };
 		EE55A7BE1B394F6000D473B0 /* sc_btn_take@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE55A7A21B394F6000D473B0 /* sc_btn_take@2x.png */; };
 		EE55A7C21B3951BB00D473B0 /* CustomFilterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE55A7C11B3951BB00D473B0 /* CustomFilterButtonView.m */; };
+		EE57594A1B4132280014413D /* IDCaptureSessionPipelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5759491B4132280014413D /* IDCaptureSessionPipelineViewController.m */; };
 		EE7CADCB1B3968CB0099CB60 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7CADCA1B3968CB0099CB60 /* AssetsLibrary.framework */; };
 		EE7CADCD1B3968F40099CB60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7CADCC1B3968F40099CB60 /* AVFoundation.framework */; };
 		EE83CE471B39721500AECC81 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EE83CE401B39721500AECC81 /* AVCamRecorder.m */; };
@@ -92,6 +101,22 @@
 		EE030AE11B3BD8B90061986A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		EE030AE21B3BD8B90061986A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		EE030AE31B3BD8B90061986A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		EE476AF01B40F607004CCCB9 /* IDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDFileManager.h; sourceTree = "<group>"; };
+		EE476AF11B40F607004CCCB9 /* IDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDFileManager.m; sourceTree = "<group>"; };
+		EE476AF21B40F607004CCCB9 /* IDPermissionsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPermissionsManager.h; sourceTree = "<group>"; };
+		EE476AF31B40F607004CCCB9 /* IDPermissionsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPermissionsManager.m; sourceTree = "<group>"; };
+		EE476AF81B40F926004CCCB9 /* IDAssetWriterCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDAssetWriterCoordinator.h; sourceTree = "<group>"; };
+		EE476AF91B40F926004CCCB9 /* IDAssetWriterCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAssetWriterCoordinator.m; sourceTree = "<group>"; };
+		EE476AFA1B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCaptureSessionAssetWriterCoordinator.h; sourceTree = "<group>"; };
+		EE476AFB1B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCaptureSessionAssetWriterCoordinator.m; sourceTree = "<group>"; };
+		EE476AFD1B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCaptureSessionMovieFileOutputCoordinator.h; sourceTree = "<group>"; };
+		EE476AFE1B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCaptureSessionMovieFileOutputCoordinator.m; sourceTree = "<group>"; };
+		EE476AFF1B40F926004CCCB9 /* IDCaptureSessionCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCaptureSessionCoordinator.h; sourceTree = "<group>"; };
+		EE476B001B40F926004CCCB9 /* IDCaptureSessionCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCaptureSessionCoordinator.m; sourceTree = "<group>"; };
+		EE476B061B40F9A4004CCCB9 /* IDImagePickerCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDImagePickerCoordinator.h; sourceTree = "<group>"; };
+		EE476B071B40F9A4004CCCB9 /* IDImagePickerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDImagePickerCoordinator.m; sourceTree = "<group>"; };
+		EE476B091B4122B2004CCCB9 /* VideoCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureViewController.h; sourceTree = "<group>"; };
+		EE476B0A1B4122B2004CCCB9 /* VideoCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureViewController.m; sourceTree = "<group>"; };
 		EE55A7681B392A8E00D473B0 /* filter_lut_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_1.png; sourceTree = "<group>"; };
 		EE55A7691B392A8E00D473B0 /* filter_lut_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_2.png; sourceTree = "<group>"; };
 		EE55A76A1B392A8E00D473B0 /* filter_lut_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_lut_3.png; sourceTree = "<group>"; };
@@ -135,6 +160,8 @@
 		EE55A7A21B394F6000D473B0 /* sc_btn_take@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sc_btn_take@2x.png"; sourceTree = "<group>"; };
 		EE55A7C01B3951BB00D473B0 /* CustomFilterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFilterButtonView.h; sourceTree = "<group>"; };
 		EE55A7C11B3951BB00D473B0 /* CustomFilterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFilterButtonView.m; sourceTree = "<group>"; };
+		EE5759481B4132280014413D /* IDCaptureSessionPipelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCaptureSessionPipelineViewController.h; sourceTree = "<group>"; };
+		EE5759491B4132280014413D /* IDCaptureSessionPipelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCaptureSessionPipelineViewController.m; sourceTree = "<group>"; };
 		EE7CADCA1B3968CB0099CB60 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		EE7CADCC1B3968F40099CB60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EE83CE3F1B39721500AECC81 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
@@ -204,6 +231,7 @@
 		EE030ADC1B3BD8B00061986A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE476AEF1B40F607004CCCB9 /* IDFileManager */,
 				EE030ADD1B3BD8B90061986A /* SVProgressHUD */,
 			);
 			path = Utils;
@@ -220,6 +248,59 @@
 				EE030AE31B3BD8B90061986A /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		EE476AEF1B40F607004CCCB9 /* IDFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				EE476AF01B40F607004CCCB9 /* IDFileManager.h */,
+				EE476AF11B40F607004CCCB9 /* IDFileManager.m */,
+				EE476AF21B40F607004CCCB9 /* IDPermissionsManager.h */,
+				EE476AF31B40F607004CCCB9 /* IDPermissionsManager.m */,
+			);
+			path = IDFileManager;
+			sourceTree = "<group>";
+		};
+		EE476AF61B40F926004CCCB9 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				EE476AF71B40F926004CCCB9 /* AVAssetWriter */,
+				EE476AFC1B40F926004CCCB9 /* AVMovieFileOutput */,
+				EE476AFF1B40F926004CCCB9 /* IDCaptureSessionCoordinator.h */,
+				EE476B001B40F926004CCCB9 /* IDCaptureSessionCoordinator.m */,
+				EE5759481B4132280014413D /* IDCaptureSessionPipelineViewController.h */,
+				EE5759491B4132280014413D /* IDCaptureSessionPipelineViewController.m */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		EE476AF71B40F926004CCCB9 /* AVAssetWriter */ = {
+			isa = PBXGroup;
+			children = (
+				EE476AF81B40F926004CCCB9 /* IDAssetWriterCoordinator.h */,
+				EE476AF91B40F926004CCCB9 /* IDAssetWriterCoordinator.m */,
+				EE476AFA1B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.h */,
+				EE476AFB1B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.m */,
+			);
+			path = AVAssetWriter;
+			sourceTree = "<group>";
+		};
+		EE476AFC1B40F926004CCCB9 /* AVMovieFileOutput */ = {
+			isa = PBXGroup;
+			children = (
+				EE476AFD1B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.h */,
+				EE476AFE1B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.m */,
+			);
+			path = AVMovieFileOutput;
+			sourceTree = "<group>";
+		};
+		EE476B051B40F9A4004CCCB9 /* UIImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				EE476B061B40F9A4004CCCB9 /* IDImagePickerCoordinator.h */,
+				EE476B071B40F9A4004CCCB9 /* IDImagePickerCoordinator.m */,
+			);
+			path = UIImagePickerController;
 			sourceTree = "<group>";
 		};
 		EE55A7671B392A8E00D473B0 /* Filter_LUT */ = {
@@ -335,6 +416,8 @@
 		EE94576C1B2572C100C305EE /* MyImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				EE476B051B40F9A4004CCCB9 /* UIImagePickerController */,
+				EE476AF61B40F926004CCCB9 /* AVFoundation */,
 				EE030ADC1B3BD8B00061986A /* Utils */,
 				EE55A7701B392BE300D473B0 /* FeSlideFilterView */,
 				EEF675151B31804200161F87 /* Category-Filter */,
@@ -358,6 +441,8 @@
 				EEE2779B1B3A5F38005DC33C /* ImagePickerViewController.m */,
 				EE9457991B25739C00C305EE /* PersonInfoViewController.h */,
 				EE94579A1B25739C00C305EE /* PersonInfoViewController.m */,
+				EE476B091B4122B2004CCCB9 /* VideoCaptureViewController.h */,
+				EE476B0A1B4122B2004CCCB9 /* VideoCaptureViewController.m */,
 				EE9457771B2572C100C305EE /* Main.storyboard */,
 				EE94577A1B2572C100C305EE /* Images.xcassets */,
 				EE94577C1B2572C100C305EE /* LaunchScreen.xib */,
@@ -559,27 +644,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE83CE481B39721500AECC81 /* AVCamUtilities.m in Sources */,
+				EE476B041B40F926004CCCB9 /* IDCaptureSessionCoordinator.m in Sources */,
+				EE476B021B40F926004CCCB9 /* IDCaptureSessionAssetWriterCoordinator.m in Sources */,
 				EE9457731B2572C100C305EE /* AppDelegate.m in Sources */,
 				EE9457701B2572C100C305EE /* main.m in Sources */,
 				EEF6751F1B32BCAE00161F87 /* UIImage+Mark.m in Sources */,
 				EE55A7731B392BE300D473B0 /* FeSlideFilterView.m in Sources */,
+				EE476B031B40F926004CCCB9 /* IDCaptureSessionMovieFileOutputCoordinator.m in Sources */,
 				EE030AE41B3BD8B90061986A /* SVIndefiniteAnimatedView.m in Sources */,
 				EEF675181B31805C00161F87 /* UIImage+Filter.m in Sources */,
 				EE83CE4D1B39723500AECC81 /* RecorderViewController.m in Sources */,
+				EE476B011B40F926004CCCB9 /* IDAssetWriterCoordinator.m in Sources */,
 				EE94579F1B2581DD00C305EE /* PhotoEditingViewController.m in Sources */,
 				EE030AE61B3BD8B90061986A /* SVProgressHUD.m in Sources */,
 				EE94579B1B25739C00C305EE /* PersonInfoViewController.m in Sources */,
 				EE55A7851B394E5900D473B0 /* CameraRecordViewController.m in Sources */,
 				EEE2779C1B3A5F38005DC33C /* ImagePickerViewController.m in Sources */,
+				EE476AF51B40F607004CCCB9 /* IDPermissionsManager.m in Sources */,
 				EE55A7C21B3951BB00D473B0 /* CustomFilterButtonView.m in Sources */,
 				EE83CE491B39721500AECC81 /* CaptureManager.m in Sources */,
 				EEA5E69A1B3A9F0800D46934 /* PhotoCollectionViewCell.m in Sources */,
 				EE9457981B25733100C305EE /* SearchViewController.m in Sources */,
 				EE9457951B25732100C305EE /* HomeViewController.m in Sources */,
+				EE476B0B1B4122B2004CCCB9 /* VideoCaptureViewController.m in Sources */,
 				EEF6751B1B3180C600161F87 /* CIFilter+Image.m in Sources */,
 				EE83CE471B39721500AECC81 /* AVCamRecorder.m in Sources */,
 				EE83CE4A1B39721500AECC81 /* KZCameraView.m in Sources */,
+				EE57594A1B4132280014413D /* IDCaptureSessionPipelineViewController.m in Sources */,
 				EE55A7761B392DCF00D473B0 /* CIFilter+LUT.m in Sources */,
+				EE476AF41B40F607004CCCB9 /* IDFileManager.m in Sources */,
+				EE476B081B40F9A4004CCCB9 /* IDImagePickerCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
